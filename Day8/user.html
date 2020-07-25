@@ -1,0 +1,33 @@
+<!-- Question-3) Welcome msg and display clock -->
+<html>
+    <head>
+        <title>Welcome msg and display clock</title>
+        <style>
+            .dark{
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body id="demo">
+        <h1>Welcome msg and display clock</h1>
+        <h2 id="msg"></h2>
+        <h3 id="clock"></h3>
+        <button onclick="fun()">Dark Mode</button>
+        <script>
+            name = prompt("Enter Your Name:");
+            document.getElementById('msg').innerHTML = `Hi! Welcome ${name}`;
+            function showClock(){
+                var date = new Date();
+                var time = date.toLocaleTimeString();
+                clock.innerHTML = time;
+            }
+            setInterval(showClock, 1000);
+            function fun(){
+                var attr = document.getElementById('demo');
+                attr.classList.toggle('dark');
+            }
+            
+        </script>
+    </body>
+</html>
